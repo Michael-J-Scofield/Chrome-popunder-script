@@ -1,0 +1,19 @@
+<script type="text/javascript">
+  function popunder() {
+    var pop = window.open("https://github.com/michael-j-scofield", "popunder", "resizable=1");
+    var pdf = document.createElement('object');
+    pdf.data='data:application/pdf;base64,JVBERi0xLjYKdHJhaWxlcjw8L1Jvb3QgMSAwIFI+PiAxIDAgb2JqPDwvVHlwZSAvQ2F0YWxvZy9QYWdlcyAyIDAgUi9OYW1lcyAyIDAgUj4+ZW5kb2JqMiAwIG9iajw8L0phdmFTY3JpcHQgMyAwIFI+PmVuZG9iajMgMCBvYmo8PC9OYW1lcyBbIChmKSA0IDAgUiBdPj5lbmRvYmo0IDAgb2JqPDwvSlMgKGFwcC5hbGVydFwoJ1BsZWFzZSB3YWl0Li4uJ1wpOykvUyAvSmF2YVNjcmlwdD4+JSVFT0YK'; // app.alert('Please wait...')
+    document.body.appendChild(pdf);
+
+    setTimeout(function() {
+      var iframe = document.createElement('iframe');
+      document.body.appendChild(iframe);
+      iframe.contentWindow.eval('Notification.requestPermission();');
+      setTimeout(function() {document.body.removeChild(iframe)}, 1500);
+      setTimeout(function() {document.body.removeChild(pdf)}, 1500);
+    }, 500);
+  }
+</script>
+<a href="#" onclick="popunder()">Create a popunder</a>
+<br>
+<a href="https://www.youtube.com/watch?v=8UqHCrGdxOM" target="_blank">Credits to liveoverflow for finding this</a>
